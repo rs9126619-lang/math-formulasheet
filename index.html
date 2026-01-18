@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 12 Math Formula Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&amp;family=Source+Sans+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .formula-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .formula-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+    
+    .topic-header {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .topic-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .nav-btn {
+      transition: all 0.2s ease;
+    }
+    
+    .nav-btn:hover {
+      background: rgba(99, 102, 241, 0.1);
+    }
+    
+    .nav-btn.active {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+    }
+    
+    .formula-item {
+      padding: 0.75rem 1rem;
+      border-left: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    .formula-item:hover {
+      background: rgba(99, 102, 241, 0.05);
+      border-left-color: #6366f1;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
+  <div id="app-wrapper" class="h-full w-full overflow-auto scrollbar-thin"><!-- Header -->
+   <header class="topic-header text-white py-8 px-6 text-center relative">
+    <div class="relative z-10">
+     <h1 id="main-title" class="text-3xl md:text-4xl font-bold mb-2" style="font-family: 'Crimson Pro', serif;">📐 Class 12 Mathematics Formula Sheet</h1>
+     <p id="subtitle" class="text-indigo-100 text-lg" style="font-family: 'Source Sans Pro', sans-serif;">Complete reference guide for CBSE Board Exams</p>
+    </div>
+   </header><!-- Navigation -->
+   <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-20 px-4 py-3 border-b border-indigo-100">
+    <div class="max-w-7xl mx-auto">
+     <div class="flex flex-wrap gap-2 justify-center"><button onclick="scrollToSection('relations')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Relations &amp; Functions</button> <button onclick="scrollToSection('inverse')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Inverse Trig</button> <button onclick="scrollToSection('matrices')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Matrices</button> <button onclick="scrollToSection('determinants')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Determinants</button> <button onclick="scrollToSection('continuity')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Continuity &amp; Diff</button> <button onclick="scrollToSection('applications')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Applications</button> <button onclick="scrollToSection('integrals')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Integrals</button> <button onclick="scrollToSection('differential')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Differential Eq</button> <button onclick="scrollToSection('vectors')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Vectors</button> <button onclick="scrollToSection('3d')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">3D Geometry</button> <button onclick="scrollToSection('probability')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium text-slate-700">Probability</button>
+     </div>
+    </div>
+   </nav><!-- Main Content -->
+   <main class="max-w-7xl mx-auto px-4 py-8"><!-- Relations and Functions -->
+    <section id="relations" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">📊 Relations and Functions</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Types of Relations</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded"><strong>Reflexive:</strong> \((a, a) \in R\) for all \(a \in A\)
+          </div>
+          <div class="formula-item rounded"><strong>Symmetric:</strong> \((a, b) \in R \Rightarrow (b, a) \in R\)
+          </div>
+          <div class="formula-item rounded"><strong>Transitive:</strong> \((a, b) \in R\) and \((b, c) \in R \Rightarrow (a, c) \in R\)
+          </div>
+          <div class="formula-item rounded"><strong>Equivalence:</strong> Reflexive + Symmetric + Transitive
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Types of Functions</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded"><strong>One-One (Injective):</strong> \(f(x_1) = f(x_2) \Rightarrow x_1 = x_2\)
+          </div>
+          <div class="formula-item rounded"><strong>Onto (Surjective):</strong> Range = Codomain
+          </div>
+          <div class="formula-item rounded"><strong>Bijective:</strong> One-One + Onto
+          </div>
+          <div class="formula-item rounded"><strong>Composition:</strong> \((f \circ g)(x) = f(g(x))\)
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Inverse Trigonometric Functions -->
+    <section id="inverse" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">📐 Inverse Trigonometric Functions</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Domain &amp; Range</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\sin^{-1}x: [-1,1] \to [-\frac{\pi}{2}, \frac{\pi}{2}]\)
+          </div>
+          <div class="formula-item rounded">
+           \(\cos^{-1}x: [-1,1] \to [0, \pi]\)
+          </div>
+          <div class="formula-item rounded">
+           \(\tan^{-1}x: \mathbb{R} \to (-\frac{\pi}{2}, \frac{\pi}{2})\)
+          </div>
+          <div class="formula-item rounded">
+           \(\cot^{-1}x: \mathbb{R} \to (0, \pi)\)
+          </div>
+          <div class="formula-item rounded">
+           \(\sec^{-1}x: |x| \geq 1 \to [0,\pi] - \{\frac{\pi}{2}\}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\csc^{-1}x: |x| \geq 1 \to [-\frac{\pi}{2}, \frac{\pi}{2}] - \{0\}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Important Properties</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\sin^{-1}x + \cos^{-1}x = \frac{\pi}{2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\tan^{-1}x + \cot^{-1}x = \frac{\pi}{2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\sec^{-1}x + \csc^{-1}x = \frac{\pi}{2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\sin^{-1}(-x) = -\sin^{-1}x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\cos^{-1}(-x) = \pi - \cos^{-1}x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\tan^{-1}(-x) = -\tan^{-1}x\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Addition Formulas</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\tan^{-1}x + \tan^{-1}y = \tan^{-1}\frac{x+y}{1-xy}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\tan^{-1}x - \tan^{-1}y = \tan^{-1}\frac{x-y}{1+xy}\)
+          </div>
+          <div class="formula-item rounded">
+           \(2\tan^{-1}x = \sin^{-1}\frac{2x}{1+x^2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(2\tan^{-1}x = \cos^{-1}\frac{1-x^2}{1+x^2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(2\tan^{-1}x = \tan^{-1}\frac{2x}{1-x^2}\)
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Matrices -->
+    <section id="matrices" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">🔢 Matrices</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Matrix Operations</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           \((A + B)' = A' + B'\)
+          </div>
+          <div class="formula-item rounded">
+           \((AB)' = B'A'\)
+          </div>
+          <div class="formula-item rounded">
+           \((kA)' = kA'\)
+          </div>
+          <div class="formula-item rounded">
+           \((A')' = A\)
+          </div>
+          <div class="formula-item rounded">
+           \(A(B + C) = AB + AC\)
+          </div>
+          <div class="formula-item rounded">
+           \((A + B)C = AC + BC\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Types of Matrices</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           <strong>Symmetric:</strong> \(A' = A\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Skew-Symmetric:</strong> \(A' = -A\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Orthogonal:</strong> \(AA' = A'A = I\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Idempotent:</strong> \(A^2 = A\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Nilpotent:</strong> \(A^k = O\) for some \(k\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Involutory:</strong> \(A^2 = I\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6">
+        <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Inverse of Matrix</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-slate-700">
+         <div class="formula-item rounded">
+          \(AA^{-1} = A^{-1}A = I\)
+         </div>
+         <div class="formula-item rounded">
+          \((AB)^{-1} = B^{-1}A^{-1}\)
+         </div>
+         <div class="formula-item rounded">
+          \((A')^{-1} = (A^{-1})'\)
+         </div>
+         <div class="formula-item rounded">
+          \(A^{-1} = \frac{1}{|A|} \cdot adj(A)\)
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Determinants -->
+    <section id="determinants" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">📊 Determinants</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Properties</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           \(|A'| = |A|\)
+          </div>
+          <div class="formula-item rounded">
+           \(|AB| = |A| \cdot |B|\)
+          </div>
+          <div class="formula-item rounded">
+           \(|kA| = k^n|A|\) (for n×n matrix)
+          </div>
+          <div class="formula-item rounded">
+           \(|A^{-1}| = \frac{1}{|A|}\)
+          </div>
+          <div class="formula-item rounded">
+           \(|adj(A)| = |A|^{n-1}\)
+          </div>
+          <div class="formula-item rounded">
+           Row/Column interchange → sign changes
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">2×2 and 3×3 Determinants</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           \(\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix} = ad - bc\)
+          </div>
+          <div class="formula-item rounded">
+           For 3×3: Expand along any row/column
+          </div>
+          <div class="formula-item rounded">
+           \(|A| = \sum a_{ij} \cdot C_{ij}\) (cofactor expansion)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Area of Triangle:</strong> \(\frac{1}{2}\begin{vmatrix} x_1 &amp; y_1 &amp; 1 \\ x_2 &amp; y_2 &amp; 1 \\ x_3 &amp; y_3 &amp; 1 \end{vmatrix}\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6">
+        <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Solving Linear Equations (Cramer's Rule)</h3>
+        <div class="formula-item rounded text-slate-700">
+         For \(AX = B\): \(x = \frac{D_x}{D}, y = \frac{D_y}{D}, z = \frac{D_z}{D}\) where \(D \neq 0\)
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Continuity and Differentiability -->
+    <section id="continuity" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">📈 Continuity and Differentiability</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Standard Derivatives</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(x^n) = nx^{n-1}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(e^x) = e^x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(a^x) = a^x \ln a\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\ln x) = \frac{1}{x}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\log_a x) = \frac{1}{x \ln a}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Trigonometric Derivatives</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\sin x) = \cos x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\cos x) = -\sin x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\tan x) = \sec^2 x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\cot x) = -\csc^2 x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\sec x) = \sec x \tan x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\csc x) = -\csc x \cot x\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Inverse Trig Derivatives</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\cos^{-1}x) = \frac{-1}{\sqrt{1-x^2}}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\tan^{-1}x) = \frac{1}{1+x^2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\cot^{-1}x) = \frac{-1}{1+x^2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\sec^{-1}x) = \frac{1}{|x|\sqrt{x^2-1}}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\frac{d}{dx}(\csc^{-1}x) = \frac{-1}{|x|\sqrt{x^2-1}}\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Rules of Differentiation</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           <strong>Product Rule:</strong> \((uv)' = u'v + uv'\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Quotient Rule:</strong> \((\frac{u}{v})' = \frac{u'v - uv'}{v^2}\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Chain Rule:</strong> \(\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Special Derivatives</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           <strong>Parametric:</strong> \(\frac{dy}{dx} = \frac{dy/dt}{dx/dt}\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Implicit:</strong> Differentiate both sides w.r.t x
+          </div>
+          <div class="formula-item rounded">
+           <strong>Logarithmic:</strong> \(y = u^v \Rightarrow \ln y = v \ln u\)
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Applications of Derivatives -->
+    <section id="applications" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">📉 Applications of Derivatives</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Rate of Change &amp; Tangents</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           <strong>Rate of Change:</strong> \(\frac{dy}{dx}\) at point
+          </div>
+          <div class="formula-item rounded">
+           <strong>Slope of Tangent:</strong> \(m = f'(x_0)\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Tangent:</strong> \(y - y_0 = m(x - x_0)\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Normal:</strong> \(y - y_0 = -\frac{1}{m}(x - x_0)\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Approximations</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           \(f(x + \Delta x) \approx f(x) + f'(x) \cdot \Delta x\)
+          </div>
+          <div class="formula-item rounded">
+           \(\Delta y = f(x + \Delta x) - f(x)\)
+          </div>
+          <div class="formula-item rounded">
+           \(dy = f'(x) \cdot dx\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6">
+        <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Maxima and Minima</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-slate-700">
+         <div class="formula-item rounded">
+          <strong>Critical Points:</strong> \(f'(x) = 0\) or undefined
+         </div>
+         <div class="formula-item rounded">
+          <strong>First Derivative Test:</strong> Sign change of \(f'(x)\)
+         </div>
+         <div class="formula-item rounded">
+          <strong>Second Derivative Test:</strong> \(f''(c) &gt; 0\) → Minima
+         </div>
+         <div class="formula-item rounded">
+          <strong>Second Derivative Test:</strong> \(f''(c) &lt; 0\) → Maxima
+         </div>
+        </div>
+       </div>
+       <div class="mt-4">
+        <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Increasing/Decreasing Functions</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-slate-700">
+         <div class="formula-item rounded">
+          <strong>Increasing:</strong> \(f'(x) &gt; 0\) in interval
+         </div>
+         <div class="formula-item rounded">
+          <strong>Decreasing:</strong> \(f'(x) &lt; 0\) in interval
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Integrals -->
+    <section id="integrals" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">∫ Integrals</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Basic Integrals</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\int x^n dx = \frac{x^{n+1}}{n+1} + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \frac{1}{x} dx = \ln|x| + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int e^x dx = e^x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int a^x dx = \frac{a^x}{\ln a} + C\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Trigonometric Integrals</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\int \sin x \, dx = -\cos x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \cos x \, dx = \sin x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \sec^2 x \, dx = \tan x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \csc^2 x \, dx = -\cot x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \sec x \tan x \, dx = \sec x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \csc x \cot x \, dx = -\csc x + C\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Special Integrals</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\int \frac{1}{\sqrt{1-x^2}} dx = \sin^{-1}x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \frac{1}{1+x^2} dx = \tan^{-1}x + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \frac{1}{x\sqrt{x^2-1}} dx = \sec^{-1}|x| + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \tan x \, dx = \ln|\sec x| + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \cot x \, dx = \ln|\sin x| + C\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Important Formulas</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\int \frac{dx}{x^2 + a^2} = \frac{1}{a}\tan^{-1}\frac{x}{a} + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \frac{dx}{x^2 - a^2} = \frac{1}{2a}\ln|\frac{x-a}{x+a}| + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1}\frac{x}{a} + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \frac{dx}{\sqrt{x^2 + a^2}} = \ln|x + \sqrt{x^2+a^2}| + C\)
+          </div>
+          <div class="formula-item rounded">
+           \(\int \sqrt{a^2 - x^2} dx = \frac{x}{2}\sqrt{a^2-x^2} + \frac{a^2}{2}\sin^{-1}\frac{x}{a} + C\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Integration Techniques</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           <strong>By Parts:</strong> \(\int uv \, dx = u\int v \, dx - \int(u' \int v \, dx)dx\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>ILATE Rule:</strong> I-Inverse, L-Log, A-Algebraic, T-Trig, E-Exp
+          </div>
+          <div class="formula-item rounded">
+           <strong>Partial Fractions:</strong> Decompose rational functions
+          </div>
+          <div class="formula-item rounded">
+           <strong>Substitution:</strong> \(\int f(g(x))g'(x)dx\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6">
+        <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Definite Integrals Properties</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-slate-700 text-sm">
+         <div class="formula-item rounded">
+          \(\int_a^b f(x)dx = -\int_b^a f(x)dx\)
+         </div>
+         <div class="formula-item rounded">
+          \(\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\)
+         </div>
+         <div class="formula-item rounded">
+          \(\int_0^a f(x)dx = \int_0^a f(a-x)dx\)
+         </div>
+         <div class="formula-item rounded">
+          \(\int_{-a}^a f(x)dx = \begin{cases} 2\int_0^a f(x)dx &amp; \text{if } f(-x)=f(x) \\ 0 &amp; \text{if } f(-x)=-f(x) \end{cases}\)
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Differential Equations -->
+    <section id="differential" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">🔄 Differential Equations</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Types &amp; Methods</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           <strong>Variable Separable:</strong> \(\frac{dy}{dx} = f(x)g(y)\)
+          </div>
+          <div class="formula-item rounded">
+           Solution: \(\int \frac{dy}{g(y)} = \int f(x)dx\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Homogeneous:</strong> \(\frac{dy}{dx} = F(\frac{y}{x})\)
+          </div>
+          <div class="formula-item rounded">
+           Substitute: \(y = vx\), then \(\frac{dy}{dx} = v + x\frac{dv}{dx}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Linear Differential Equations</h3>
+         <div class="space-y-2 text-slate-700">
+          <div class="formula-item rounded">
+           <strong>Form:</strong> \(\frac{dy}{dx} + Py = Q\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>I.F.:</strong> \(e^{\int P \, dx}\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Solution:</strong> \(y \cdot (I.F.) = \int Q \cdot (I.F.) dx + C\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Order:</strong> Highest derivative present
+          </div>
+          <div class="formula-item rounded">
+           <strong>Degree:</strong> Power of highest derivative (polynomial)
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Vectors -->
+    <section id="vectors" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">➡️ Vectors</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Basic Operations</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(|\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\hat{a} = \frac{\vec{a}}{|\vec{a}|}\) (unit vector)
+          </div>
+          <div class="formula-item rounded">
+           \(\vec{a} + \vec{b} = (a_1+b_1)\hat{i} + (a_2+b_2)\hat{j} + (a_3+b_3)\hat{k}\)
+          </div>
+          <div class="formula-item rounded">
+           Direction cosines: \(\cos\alpha, \cos\beta, \cos\gamma\)
+          </div>
+          <div class="formula-item rounded">
+           \(\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Dot Product (Scalar)</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(\vec{a} \cdot \vec{b} = |\vec{a}||\vec{b}|\cos\theta\)
+          </div>
+          <div class="formula-item rounded">
+           \(\vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + a_3b_3\)
+          </div>
+          <div class="formula-item rounded">
+           \(\vec{a} \perp \vec{b} \Leftrightarrow \vec{a} \cdot \vec{b} = 0\)
+          </div>
+          <div class="formula-item rounded">
+           Projection of \(\vec{a}\) on \(\vec{b}\) = \(\frac{\vec{a} \cdot \vec{b}}{|\vec{b}|}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\cos\theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}||\vec{b}|}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Cross Product (Vector)</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(|\vec{a} \times \vec{b}| = |\vec{a}||\vec{b}|\sin\theta\)
+          </div>
+          <div class="formula-item rounded">
+           \(\vec{a} \times \vec{b} = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3 \end{vmatrix}\)
+          </div>
+          <div class="formula-item rounded">
+           \(\vec{a} \parallel \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = \vec{0}\)
+          </div>
+          <div class="formula-item rounded">
+           Area of parallelogram = \(|\vec{a} \times \vec{b}|\)
+          </div>
+          <div class="formula-item rounded">
+           Area of triangle = \(\frac{1}{2}|\vec{a} \times \vec{b}|\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6">
+        <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Scalar Triple Product</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-slate-700">
+         <div class="formula-item rounded">
+          \([\vec{a}, \vec{b}, \vec{c}] = \vec{a} \cdot (\vec{b} \times \vec{c})\)
+         </div>
+         <div class="formula-item rounded">
+          Volume of parallelepiped = \(|[\vec{a}, \vec{b}, \vec{c}]|\)
+         </div>
+         <div class="formula-item rounded">
+          Coplanar vectors: \([\vec{a}, \vec{b}, \vec{c}] = 0\)
+         </div>
+         <div class="formula-item rounded">
+          Volume of tetrahedron = \(\frac{1}{6}|[\vec{a}, \vec{b}, \vec{c}]|\)
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Three-Dimensional Geometry -->
+    <section id="3d" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">🧊 Three-Dimensional Geometry</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Equation of Line</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           <strong>Vector Form:</strong> \(\vec{r} = \vec{a} + \lambda\vec{b}\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Cartesian:</strong> \(\frac{x-x_1}{a} = \frac{y-y_1}{b} = \frac{z-z_1}{c}\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Through 2 points:</strong> \(\frac{x-x_1}{x_2-x_1} = \frac{y-y_1}{y_2-y_1} = \frac{z-z_1}{z_2-z_1}\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Angle between lines:</strong> \(\cos\theta = \frac{|\vec{b_1} \cdot \vec{b_2}|}{|\vec{b_1}||\vec{b_2}|}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Equation of Plane</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           <strong>Vector Form:</strong> \(\vec{r} \cdot \vec{n} = d\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Cartesian:</strong> \(ax + by + cz = d\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Intercept:</strong> \(\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1\)
+          </div>
+          <div class="formula-item rounded">
+           <strong>Through 3 points:</strong> Use determinant form
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Distance Formulas</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           Point to plane: \(\frac{|ax_1 + by_1 + cz_1 - d|}{\sqrt{a^2+b^2+c^2}}\)
+          </div>
+          <div class="formula-item rounded">
+           Between parallel planes: \(\frac{|d_1 - d_2|}{\sqrt{a^2+b^2+c^2}}\)
+          </div>
+          <div class="formula-item rounded">
+           Skew lines: \(\frac{|(\vec{a_2}-\vec{a_1}) \cdot (\vec{b_1} \times \vec{b_2})|}{|\vec{b_1} \times \vec{b_2}|}\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Angle Between</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           Line &amp; Plane: \(\sin\theta = \frac{|\vec{b} \cdot \vec{n}|}{|\vec{b}||\vec{n}|}\)
+          </div>
+          <div class="formula-item rounded">
+           Two Planes: \(\cos\theta = \frac{|\vec{n_1} \cdot \vec{n_2}|}{|\vec{n_1}||\vec{n_2}|}\)
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Probability -->
+    <section id="probability" class="mb-10">
+     <div class="formula-card rounded-2xl overflow-hidden shadow-lg">
+      <div class="topic-header px-6 py-4">
+       <h2 class="text-xl font-bold text-white relative z-10" style="font-family: 'Crimson Pro', serif;">🎲 Probability</h2>
+      </div>
+      <div class="p-6">
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Basic Probability</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(P(A) = \frac{n(A)}{n(S)}\)
+          </div>
+          <div class="formula-item rounded">
+           \(0 \leq P(A) \leq 1\)
+          </div>
+          <div class="formula-item rounded">
+           \(P(A') = 1 - P(A)\)
+          </div>
+          <div class="formula-item rounded">
+           \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)
+          </div>
+          <div class="formula-item rounded">
+           \(P(A \cap B') = P(A) - P(A \cap B)\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Conditional Probability</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(P(A|B) = \frac{P(A \cap B)}{P(B)}\)
+          </div>
+          <div class="formula-item rounded">
+           \(P(A \cap B) = P(A) \cdot P(B|A)\)
+          </div>
+          <div class="formula-item rounded">
+           \(P(A \cap B) = P(B) \cdot P(A|B)\)
+          </div>
+          <div class="formula-item rounded">
+           Independent: \(P(A \cap B) = P(A) \cdot P(B)\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Bayes' Theorem</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(P(A_i|B) = \frac{P(A_i)P(B|A_i)}{\sum P(A_j)P(B|A_j)}\)
+          </div>
+          <div class="formula-item rounded">
+           Total Probability:
+          </div>
+          <div class="formula-item rounded">
+           \(P(B) = \sum_{i=1}^{n} P(A_i)P(B|A_i)\)
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Binomial Distribution</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           \(P(X = r) = \binom{n}{r} p^r q^{n-r}\)
+          </div>
+          <div class="formula-item rounded">
+           Mean: \(\mu = np\)
+          </div>
+          <div class="formula-item rounded">
+           Variance: \(\sigma^2 = npq\)
+          </div>
+          <div class="formula-item rounded">
+           Standard Deviation: \(\sigma = \sqrt{npq}\)
+          </div>
+          <div class="formula-item rounded">
+           where \(q = 1 - p\)
+          </div>
+         </div>
+        </div>
+        <div>
+         <h3 class="font-semibold text-indigo-700 mb-3 text-lg">Random Variables</h3>
+         <div class="space-y-2 text-slate-700 text-sm">
+          <div class="formula-item rounded">
+           Mean: \(E(X) = \sum x_i P(x_i)\)
+          </div>
+          <div class="formula-item rounded">
+           Variance: \(Var(X) = E(X^2) - [E(X)]^2\)
+          </div>
+          <div class="formula-item rounded">
+           \(E(X^2) = \sum x_i^2 P(x_i)\)
+          </div>
+          <div class="formula-item rounded">
+           \(E(aX + b) = aE(X) + b\)
+          </div>
+          <div class="formula-item rounded">
+           \(Var(aX + b) = a^2 Var(X)\)
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Footer -->
+    <footer class="text-center py-8 text-slate-500 text-sm">
+     <p>📚 Best of luck for your exams! Keep practicing! 🎯</p>
+    </footer>
+   </main>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      main_title: '📐 Class 12 Mathematics Formula Sheet',
+      subtitle: 'Complete reference guide for CBSE Board Exams',
+      primary_color: '#6366f1',
+      secondary_color: '#8b5cf6',
+      background_color: '#f8fafc',
+      text_color: '#334155',
+      accent_color: '#818cf8',
+      font_family: 'Crimson Pro',
+      font_size: 16
+    };
+    
+    // Smooth scroll to section
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Update active nav button
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+      }
+    }
+    
+    // Config change handler
+    async function onConfigChange(config) {
+      const mainTitle = document.getElementById('main-title');
+      const subtitle = document.getElementById('subtitle');
+      
+      if (mainTitle) {
+        mainTitle.textContent = config.main_title || defaultConfig.main_title;
+        mainTitle.style.fontFamily = `${config.font_family || defaultConfig.font_family}, serif`;
+      }
+      
+      if (subtitle) {
+        subtitle.textContent = config.subtitle || defaultConfig.subtitle;
+      }
+      
+      // Apply font size scaling
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.querySelectorAll('.formula-item').forEach(item => {
+        item.style.fontSize = `${baseSize * 0.9}px`;
+      });
+      
+      // Apply colors to topic headers
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+      
+      document.querySelectorAll('.topic-header').forEach(header => {
+        header.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      });
+      
+      // Apply text color
+      const textColor = config.text_color || defaultConfig.text_color;
+      document.querySelectorAll('.formula-item').forEach(item => {
+        item.style.color = textColor;
+      });
+      
+      // Re-render MathJax if available
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        try {
+          await window.MathJax.typesetPromise();
+        } catch (e) {
+          console.error('MathJax typeset error:', e);
+        }
+      }
+    }
+    
+    // Map to capabilities for color editing
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              config.secondary_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              config.primary_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+    
+    // Map to edit panel values
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['main_title', config.main_title || defaultConfig.main_title],
+        ['subtitle', config.subtitle || defaultConfig.subtitle]
+      ]);
+    }
+    
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      // Fallback if SDK not available
+      onConfigChange(defaultConfig);
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bfca22c84038fa4',t:'MTc2ODcyNDAxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
